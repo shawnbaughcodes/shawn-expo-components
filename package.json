@@ -1,6 +1,7 @@
 {
   "main": "node_modules/expo/AppEntry.js",
   "version": "0.0.2",
+  "name": "shawn-expo-components",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
@@ -22,5 +23,5 @@
     "@types/react-native": "~0.62.13",
     "typescript": "~3.9.5"
   },
-  "private": true
+  "private": false
 }
