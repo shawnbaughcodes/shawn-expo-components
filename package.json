@@ -1,12 +1,12 @@
 {
-  "main": "dist/index.js",
   "version": "0.0.5",
   "name": "shawn-expo-components",
-  "module": "dist/index.js",
+  "main": "dist",
+  "module": "dist",
   "files": [
-    "build"
+    "dist"
   ],
-  "types": "build/index.d.ts",
+  "types": "dist/index.d.ts",
   "scripts": {
     "android": "expo start --android",
     "build": "rollup -c",
