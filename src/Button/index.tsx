@@ -1,15 +1,5 @@
-import React, { FC } from 'react';
-// @ts-ignore
-import { TouchableOpacity, View, Text } from '../utils/components';
-type ButtonProps = {
-  title: string;
-};
-const Button: FC<ButtonProps> = ({ title }) => {
-  return (
-    <TouchableOpacity>
-      <Text>{title}</Text>
-    </TouchableOpacity>
-  );
-};
+import { Platform } from 'react-native';
+import NativeButton from './Button.native';
+import WebButton from './Button';
 
-export default Button;
+export default Platform.OS === 'web' ? WebButton : NativeButton;
