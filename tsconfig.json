@@ -11,8 +11,10 @@
       "*": ["*"],
       "src": ["./src"]
     },
+    "module": "es6",
     "skipLibCheck": true,
     "resolveJsonModule": true,
-    "strict": true,
+    "rootDir": ".",
+    "strict": true
   }
 }
