@@ -14,11 +14,19 @@ const myConfig = {
       dir: pkg.main,
       format: 'cjs',
       sourcemap: true,
+      globals: {
+        react: 'React',
+        'react-native': 'reactNative',
+      },
     },
     {
       dir: pkg.module,
       format: 'esm',
       sourcemap: true,
+      globals: {
+        react: 'React',
+        'react-native': 'reactNative',
+      },
     },
   ],
   external: [
@@ -46,4 +54,5 @@ const myConfig = {
     }),
   ],
 };
+
 export default [myConfig];
