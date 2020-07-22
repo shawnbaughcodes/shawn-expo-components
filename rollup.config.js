@@ -19,15 +19,15 @@ const myConfig = {
         'react-native': 'reactNative',
       },
     },
-    {
-      dir: pkg.module,
-      format: 'esm',
-      sourcemap: true,
-      globals: {
-        react: 'React',
-        'react-native': 'reactNative',
-      },
-    },
+    // {
+    //   dir: pkg.module,
+    //   format: 'esm',
+    //   sourcemap: true,
+    //   globals: {
+    //     react: 'React',
+    //     'react-native': 'reactNative',
+    //   },
+    // },
   ],
   external: [
     ...Object.keys(pkg.dependencies || {}),
@@ -36,7 +36,11 @@ const myConfig = {
   types: 'index.d.ts',
   plugins: [
     commonjs(),
-    nodeResolve(),
+    nodeResolve({
+      browser: true,
+      jsnext: true,
+      'react-app': true,
+    }),
     peerDepsExternal(),
     typescript({
       typescript: require('typescript'),
