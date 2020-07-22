@@ -31,7 +31,7 @@ const myConfig = {
   ],
   external: [
     ...Object.keys(pkg.dependencies || {}),
-    ...Object.keys(pkg.peerDependencies || {}),
+    // ...Object.keys(pkg.peerDependencies || {}),
   ],
   types: 'index.d.ts',
   plugins: [
