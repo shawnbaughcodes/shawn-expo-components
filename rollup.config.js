@@ -35,7 +35,11 @@ const myConfig = {
   ],
   types: 'index.d.ts',
   plugins: [
-    commonjs(),
+    commonjs({
+      namedExports: {
+        'react-native': ['View', 'Dimensions', 'TouchableOpacity'],
+      },
+    }),
     nodeResolve({
       browser: true,
       jsnext: true,
