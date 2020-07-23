@@ -20,7 +20,7 @@ const myConfig = {
       },
     },
   ],
-  external: [...Object.keys(pkg.dependencies || {})],
+  // external: [...Object.keys(pkg.dependencies || {})],
   types: 'index.d.ts',
   plugins: [
     commonjs({
