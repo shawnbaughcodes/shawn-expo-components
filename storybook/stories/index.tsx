@@ -1,12 +1,12 @@
 import React from 'react';
-import { StyleSheet, Text } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 import { storiesOf } from '@storybook/react-native';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 import Button from '../../src/Button';
+import Snackbar from '../../src/Snackbar';
 import Welcome from './Welcome';
-import { View } from '../../src/utils/components';
 
 const styles = StyleSheet.create({
   wrapper: {
@@ -17,14 +17,16 @@ const styles = StyleSheet.create({
   },
 });
 
-storiesOf('Welcome', module).add('to Storybook', () => (
-  <View style={styles.wrapper}>
-    <Welcome showApp={linkTo('Button')} />
-  </View>
-));
+storiesOf('Welcome', module).add('to Storybook', () => <Welcome />);
 
 storiesOf('Button', module).add('default', () => (
   <View style={styles.wrapper}>
     <Button title="something cool" />
+  </View>
+));
+
+storiesOf('Snackbar', module).add('default', () => (
+  <View style={styles.wrapper}>
+    <Snackbar message="Some sort of message" />
   </View>
 ));

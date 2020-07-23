@@ -11,7 +11,7 @@ const myConfig = {
   input: 'src/index.ts',
   output: [
     {
-      dir: pkg.main,
+      dir: 'dist',
       format: 'cjs',
       sourcemap: true,
       globals: {
@@ -19,20 +19,8 @@ const myConfig = {
         'react-native': 'reactNative',
       },
     },
-    // {
-    //   dir: pkg.module,
-    //   format: 'esm',
-    //   sourcemap: true,
-    //   globals: {
-    //     react: 'React',
-    //     'react-native': 'reactNative',
-    //   },
-    // },
   ],
-  external: [
-    ...Object.keys(pkg.dependencies || {}),
-    // ...Object.keys(pkg.peerDependencies || {}),
-  ],
+  external: [...Object.keys(pkg.dependencies || {})],
   types: 'index.d.ts',
   plugins: [
     commonjs({

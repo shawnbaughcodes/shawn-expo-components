@@ -1,13 +1,12 @@
+import { ButtonProps, styles } from '.';
 import React, { FC } from 'react';
 // @ts-ignore
 import { TouchableOpacity, View, Text } from 'react-native';
-type ButtonProps = {
-  title: string;
-};
+
 const Button: FC<ButtonProps> = ({ title }) => {
   return (
-    <TouchableOpacity>
-      <Text>{title}</Text>
+    <TouchableOpacity style={styles.wrapper}>
+      <Text style={styles.text}>{title}</Text>
     </TouchableOpacity>
   );
 };
