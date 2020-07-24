@@ -1,7 +1,7 @@
 {
   "version": "0.0.20",
   "name": "shawn-expo-components",
-  "main": "App.tsx",
+  "main": "dist/index.js",
   "module": "dist",
   "files": [
     "dist"
