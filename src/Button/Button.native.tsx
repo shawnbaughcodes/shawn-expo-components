@@ -1,7 +1,6 @@
-import { ButtonProps, styles } from '.';
 import React, { FC } from 'react';
-// @ts-ignore
-import { TouchableOpacity, View, Text } from 'react-native';
+import { ButtonProps, styles } from '.';
+import { TouchableOpacity, Text } from 'react-native';
 
 const Button: FC<ButtonProps> = ({ title }) => {
   return (

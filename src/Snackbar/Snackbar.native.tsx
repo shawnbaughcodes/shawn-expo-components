@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Text, View } from 'react-native';
 import { styles, SnackbarProps } from '.';
 
-const Snackbar = ({ message, icon }: SnackbarProps) => {
+const Snackbar: FC<SnackbarProps> = ({ message, icon }) => {
   return (
     <View style={styles.wrapper}>
       {icon && (

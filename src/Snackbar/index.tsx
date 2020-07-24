@@ -7,7 +7,8 @@ export type SnackbarProps = {
   icon?: string;
 };
 
-export default Platform.OS === 'web' ? WebSnackbar : NativeSnackbar;
+const Snackbar = Platform.OS === 'web' ? WebSnackbar : NativeSnackbar;
+export default Snackbar;
 
 export const styles = StyleSheet.create({
   wrapper: {

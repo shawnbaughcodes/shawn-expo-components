@@ -1,9 +1,10 @@
 import { Platform, StyleSheet } from 'react-native';
 import NativeButton from './Button.native';
 import WebButton from './Button';
-
-export default Platform.OS === 'web' ? WebButton : NativeButton;
-
+const Button = (Platform.OS === 'web' ? WebButton : NativeButton) as React.FC<
+  ButtonProps
+>;
+export default Button;
 export const styles = StyleSheet.create({
   wrapper: {
     backgroundColor: '#353535',
