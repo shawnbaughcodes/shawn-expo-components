@@ -1,9 +1,12 @@
 import { Platform, StyleSheet } from 'react-native';
 import NativeButton from './Button.native';
 import WebButton from './Button';
-const Button = (Platform.OS === 'web' ? WebButton : NativeButton) as React.FC<
-  ButtonProps
->;
+const Button = Platform.select({
+  ios: NativeButton,
+  android: NativeButton,
+  default: WebButton,
+});
+
 export default Button;
 export const styles = StyleSheet.create({
   wrapper: {

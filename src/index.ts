@@ -1,2 +1,3 @@
-export { default as Button } from './Button';
-export { default as Snackbar } from './Snackbar';
+import Button from './Button';
+import Snackbar from './Snackbar';
+export { Button, Snackbar };
