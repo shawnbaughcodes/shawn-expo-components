@@ -1,28 +1,29 @@
 /* eslint-disable flowtype/require-valid-file-annotation, no-console, import/extensions */
 import nodeResolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
-import babel from 'rollup-plugin-babel';
+import babel from '@rollup/plugin-babel';
 import typescript from 'rollup-plugin-typescript2';
+import auto from '@rollup/plugin-auto-install';
 // import sourceMaps from 'rollup-plugin-sourcemaps';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import pkg from './package.json';
 
 const myConfig = {
   input: 'src/index.ts',
-  output: [
-    {
-      dir: 'dist',
-      format: 'cjs',
-      sourcemap: true,
-      globals: {
-        react: 'React',
-        'react-native': 'reactNative',
-      },
+  output: {
+    file: 'dist/index.js',
+    format: 'cjs',
+    sourcemap: true,
+    globals: {
+      react: 'React',
+      'react-native': 'reactNative',
     },
-  ],
-  // external: [...Object.keys(pkg.dependencies || {})],
+  },
+
+  external: [...Object.keys(pkg.dependencies || {})],
   types: 'index.d.ts',
   plugins: [
+    auto(),
     commonjs({
       namedExports: {
         'react-native': ['View', 'Dimensions', 'TouchableOpacity'],
@@ -32,6 +33,7 @@ const myConfig = {
       browser: true,
       jsnext: true,
       'react-app': true,
+      extensions: ['.js', '.jsx', '.ts', '.tsx'],
     }),
     peerDepsExternal(),
     typescript({
@@ -40,7 +42,7 @@ const myConfig = {
     }),
     babel({
       babelrc: false,
-      exclude: 'node_modules/**',
+      exclude: ['node_modules/**', 'babel.config'],
       presets: [
         ['@babel/env', { loose: true, modules: false }],
         '@babel/react',
