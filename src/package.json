@@ -1,16 +1,13 @@
 {
-  "name": "shawn-expo-components",
-  "main": "App.tsx",
+  "version": "0.0.23",
+  "main": "index.tsx",
+  "module": "../dist",
+  "files": [
+    "dist"
+  ],
   "types": "index.d.ts",
   "scripts": {
-    "android": "expo start --android",
-    "build": "(cd ./src && npm run build)",
-    "deploy": "(cd)",
-    "eject": "expo eject",
-    "ios": "expo start --ios",
-    "start": "expo start",
-    "storybook": "start-storybook -p 7007",
-    "web": "expo start --web"
+    "build": "rollup -c"
   },
   "dependencies": {
     "expo": "~38.0.8",
@@ -57,5 +54,6 @@
     "typings": "^2.1.1"
   },
   "license": "MIT",
+  "peerDependencies": {},
   "private": false
 }

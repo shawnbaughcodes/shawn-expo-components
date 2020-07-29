@@ -7,7 +7,6 @@ const Button = Platform.select({
   default: WebButton,
 });
 
-export default Button;
 export const styles = StyleSheet.create({
   wrapper: {
     backgroundColor: '#353535',
@@ -29,3 +28,5 @@ export type ButtonProps = {
   title: string;
   type?: string;
 };
+
+export default Button;

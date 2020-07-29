@@ -6,12 +6,12 @@ import typescript from 'rollup-plugin-typescript2';
 import auto from '@rollup/plugin-auto-install';
 // import sourceMaps from 'rollup-plugin-sourcemaps';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
-import pkg from './package.json';
+import pkg from '../package.json';
 
 const myConfig = {
-  input: 'src/index.ts',
+  input: 'index.ts',
   output: {
-    file: 'dist/index.js',
+    file: '../dist/index.js',
     format: 'cjs',
     sourcemap: true,
     globals: {
@@ -21,6 +21,7 @@ const myConfig = {
   },
 
   external: [...Object.keys(pkg.dependencies || {})],
+  ignore: ['./rollup.config.js'],
   types: 'index.d.ts',
   plugins: [
     auto(),
